@@ -1,0 +1,12 @@
+Id Illustrator		#Books	#Images
+AS Axel Scheffler 	15 	571 
+DM David McKee 		20	415 
+KH Kevin Henkes 	11 	278 
+KP Korky Paul 		13 	362 
+MB Marc Brown* 		18 	461 
+PP Patricia Polacco 	20 	756
+RC Rosa Curto 		10 	336
+SC Stephen Cartwright 	25 	405
+SD Serap Deliorman* 	5 	158
+TR Tony Ross 		21 	521
+   Hayao Miyazaki
