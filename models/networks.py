@@ -10,6 +10,9 @@ import math
 import torch.utils.model_zoo as model_zoo
 import sys
 
+import ctypes
+ctypes.cdll.LoadLibrary('caffe2_nvrtc.dll')
+
 ###############################################################################
 # Helper Functions
 ###############################################################################
