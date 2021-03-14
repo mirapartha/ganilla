@@ -23,13 +23,13 @@ def save_images(webpage, visuals, image_path, aspect_ratio=1.0, width=256, f_nam
     if not os.path.exists(os.path.join(image_dir, aaa)):
         os.makedirs(os.path.join(image_dir, aaa))
 
-    webpage.add_header(name)
+    #webpage.add_header(name)
     ims, txts, links = [], [], []
 
     for label, im_data in visuals.items():
         im = util.tensor2im(im_data)
-        # if label == "real_A":
-        #     continue
+        if label == "real_A":
+            continue
 
         # image_name = '%s.png' % (name)
         # image_name = f_name # cityscape icin eklendi
@@ -37,8 +37,9 @@ def save_images(webpage, visuals, image_path, aspect_ratio=1.0, width=256, f_nam
             im = np.array(Image.fromarray(obj=im).resize(size=(1024, 2048))) # im = imresize(im, (1024, 2048))  # cityscape icin eklendi
             image_name = os.path.splitext(f_name)[0] + ".png" # cityscape icin eklendi
         else:
-            image_name = '%s_%s.png' % (name, label)
-        save_path = os.path.join(image_dir, image_name)
+            image_name = '%s.png' % (name) # image_name = '%s_%s.png' % (name, label)
+        #save_path = os.path.join(os.path.join(image_dir,'..\..\..'), image_name) #os.path.join(image_dir, image_name)
+        print(save_path)
         h, w, _ = im.shape
         if aspect_ratio > 1.0:
             im = np.array(Image.fromarray(obj=im).resize(size=(h, int(w * aspect_ratio)), resample=Image.BICUBIC)) # im = imresize(im, (h, int(w * aspect_ratio)), interp='bicubic')
@@ -49,7 +50,7 @@ def save_images(webpage, visuals, image_path, aspect_ratio=1.0, width=256, f_nam
         ims.append(image_name)
         txts.append(label)
         links.append(image_name)
-    webpage.add_images(ims, txts, links, width=width)
+    #webpage.add_images(ims, txts, links, width=width)
 
 
 class Visualizer():

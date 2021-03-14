@@ -149,7 +149,7 @@ class BaseModel():
                 print('[Network %s] Total number of parameters : %.3f M' % (name, num_params / 1e6))
         print('-----------------------------------------------')
 
-    # set requies_grad=Fasle to avoid computation
+    # set requies_grad=False to avoid computation
     def set_requires_grad(self, nets, requires_grad=False):
         if not isinstance(nets, list):
             nets = [nets]
